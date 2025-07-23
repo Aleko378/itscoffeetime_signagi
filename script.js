@@ -1,10 +1,18 @@
-const btnGe = document.getElementById('btn_ge');
-const btnEn = document.getElementById('btn_en');
-const ge = document.getElementById('content_ge');
-const en = document.getElementById('content_en');
+const langSections = {
+  ge: document.getElementById('content_ge'),
+  en: document.getElementById('content_en'),
+  ru: document.getElementById('content_ru'),
+};
 
-btnGe.addEventListener('click', () => { ge.style.display = 'block'; en.style.display = 'none'; });
-btnEn.addEventListener('click', () => { ge.style.display = 'none'; en.style.display = 'block'; });
+function showLang(lang) {
+  for (let key in langSections) {
+    langSections[key].style.display = key === lang ? 'block' : 'none';
+  }
+}
 
-// По умолчанию — English
-en.style.display = 'block';
+document.getElementById('btn_ge').addEventListener('click', () => showLang('ge'));
+document.getElementById('btn_en').addEventListener('click', () => showLang('en'));
+document.getElementById('btn_ru').addEventListener('click', () => showLang('ru'));
+
+// По умолчанию показываем английский
+showLang('en');
