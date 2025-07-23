@@ -15,4 +15,4 @@ document.getElementById('btn_en').addEventListener('click', () => showLang('en')
 document.getElementById('btn_ru').addEventListener('click', () => showLang('ru'));
 
 // По умолчанию показываем английский
-showLang('en');
+showLang('ge');
